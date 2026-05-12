@@ -26,7 +26,18 @@ else:
 # Keep only unrated rows
 remaining = df[~df["A_id"].isin(judged_ids)].reset_index(drop=True)
 
+
 st.write(f"Remaining pairs to review: {len(remaining)}")
+
+if os.path.exists(OUTPUT_FILE):
+    ratings_df = pd.read_csv(OUTPUT_FILE)
+
+    st.download_button(
+        label="Download ratings CSV",
+        data=ratings_df.to_csv(index=False),
+        file_name=OUTPUT_FILE,
+        mime="text/csv"
+    )
 
 if len(remaining) == 0:
     st.success("All pairs have been reviewed.")
@@ -78,6 +89,6 @@ if os.path.exists(OUTPUT_FILE):
     st.download_button(
         label="Download ratings CSV",
         data=ratings_df.to_csv(index=False),
-        file_name="ErateNCESmpnet_rater_judgments_NY.csv",
+        file_name="ErateNCESmpnet_rater_judgements_NY.csv",
         mime="text/csv"
     )
