@@ -11,7 +11,7 @@ df = pd.read_csv(INPUT_FILE)
 
 OUTPUT_FILE = "ErateNCESmpnet_rater_judgements_NY.csv"
 
-st.title("Statement Match for New York Schools")
+st.title("NCES-Erate Match for New York Schools")
 
 df = pd.read_csv(INPUT_FILE)
 
