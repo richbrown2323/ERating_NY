@@ -47,10 +47,10 @@ row = remaining.iloc[0]
 
 st.subheader(f"Reviewing {row['A_id']} vs {row['Best_B_id']}")
 
-st.markdown("### Statement A")
+st.markdown("### NCES School")
 st.write(row["A_statement"])
 
-st.markdown("### Best Matching Statement B")
+st.markdown("### Best Matching School from Erate")
 st.write(row["Best_B_statement"])
 
 st.markdown("### Cosine Similarity")
